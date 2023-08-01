@@ -1,0 +1,36 @@
+ /* style for loader class overlay */
+ .spanner{
+   background: #ffffff55;
+   visibility: hidden;
+   position: fixed;
+   width: 100%;
+   display: block;
+   height: 100%;
+   left: 0;
+    top: 0;
+   z-index: 2000;
+}
+
+#wait{
+   display:none;
+   position: absolute;
+   left: 35%;
+    top: 20%;
+}
+
+.show{
+   visibility: visible;
+}
+
+.spanner, .overlay{
+   opacity: 100!important;
+   -webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+   transition: all 0.3s;
+}
+
+.spanner.show, .overlay.show {
+   opacity: 1
+}
+
+ /* style for loader class overlay */

@@ -1,0 +1,33 @@
+scripts:
+  artisan: kool exec app php artisan
+  composer: kool exec app composer
+  codestyle: docker compose -f docker-compose.yml -f ci.yml run --rm codestyle phpcs -n --extensions=php /app
+  fix-codestyle: docker compose -f docker-compose.yml -f ci.yml run --rm codestyle phpcbf -n --extensions=php /app
+  phpunit: docker compose -f docker-compose.yml run --rm app ./vendor/phpunit/phpunit/phpunit
+  phpcdp: docker compose -f docker-compose.yml run --rm app php phpcpd.phar /app/app --min-lines=50
+  jest:  npm run test
+  eslint: kool run npm run eslint
+  security-checker: ./local-php-security-checker_1.2.0_windows_amd64.exe --path=composer.lock
+  build-assets: kool run npm run production --progress false
+  nodejsscan: nodejsscan -d resources/js -o scanresult.json
+  mailhog: docker compose -f docker-compose.yml -f ci.yml run -p 8025:8025 -p 1025:1025 --rm mailhog
+  node-setup:
+  - kool run npm install
+  - kool run npm run dev
+  npm: kool docker kooldev/node:14 npm
+  npx: kool docker kooldev/node:14 npx
+  psql: kool exec -e PGPASSWORD=$DB_PASSWORD database psql -U $DB_USERNAME $DB_DATABASE
+  reset:
+  - kool run composer install
+  - kool run artisan migrate:fresh --seed
+  - kool run node-setup
+  setup:
+  - cp .env.example .env
+  - kool start
+  - kool run composer install
+  - kool run artisan key:generate
+  - kool run node-setup
+  build:
+  - docker-compose build
+  deploy:
+  - dep deploy --branch=develop

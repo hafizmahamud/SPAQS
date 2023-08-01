@@ -1,0 +1,13 @@
+{
+    "name": "Tunas",
+    "alias": "tunas",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Tunas\\Providers\\TunasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

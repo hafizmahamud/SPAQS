@@ -1,0 +1,13 @@
+{
+    "name": "Awas",
+    "alias": "awas",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Awas\\Providers\\AwasServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

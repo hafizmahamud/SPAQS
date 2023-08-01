@@ -1,0 +1,22 @@
+.input-icon {
+    position: relative;
+    width: 50px;
+  }
+
+  .input-icon > i {
+    position: absolute;
+    display: block;
+    transform: translate(0, -50%);
+    top: 50%;
+    pointer-events: none;
+    width: 25px;
+    text-align: center;
+      font-style: normal;
+  }
+
+  .input-icon > input {
+    padding-left: 50px;
+      padding-right: 0;
+  }
+
+

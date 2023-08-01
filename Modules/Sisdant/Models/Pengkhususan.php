@@ -1,0 +1,61 @@
+<?php
+/**
+ * Pengkhususan File.
+ *
+ * PHP Version 8.0
+ *
+ * @category Pengkhususan
+ * @package  Pengkhususan
+ * @author   Syafina <syafina@plisca.com.my>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     https://www.plisca.com.my/
+ */
+namespace Modules\Sisdant\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Modules\Sisdant\Models\Kelas;
+
+/**
+ * Pengkhususan File.
+ *
+ * PHP Version 8.0
+ *
+ * @category Pengkhususan
+ * @package  Pengkhususan
+ * @author   Syafina <syafina@plisca.com.my>
+ * @license  http://www.gnu.org/copyleft/gpl.html GNU General Public License
+ * @link     https://www.plisca.com.my/
+ */
+class Pengkhususan extends Model
+{
+    /**
+     * The table associated with the model.
+     *
+     * @var string
+     */
+    protected $table = 'pengkhususan';
+    /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id';
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    public $fillable = ['kod', 'pengkhususan', 'kelas_id'];
+
+    /**
+     * Processes this sniff, when one of its tokens is encountered
+     *
+     * @return foreign data
+     */
+    public function kelas()
+    {
+        return $this->belongsTo(Kelas::class, 'kelas_id');
+    }
+}

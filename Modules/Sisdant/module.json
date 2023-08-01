@@ -1,0 +1,13 @@
+{
+    "name": "Sisdant",
+    "alias": "sisdant",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Sisdant\\Providers\\SisdantServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}

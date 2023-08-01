@@ -1,0 +1,31 @@
+
+    /*--------------------------------------------------------------
+  # tooltip
+  --------------------------------------------------------------*/
+
+  .tooltip-text {
+      overflow: hidden;
+      white-space: nowrap;
+      max-width:100%;
+      /* position: absolute; */
+      display: none;
+      right: -1%;
+      top: -30px;
+      background: rgb(240, 240, 240);
+      padding: 10px;
+      font-size: 12px;
+      text-align: center;
+      border-radius: 10px;
+      transition: opacity 1s ease-out;
+      box-shadow: 0px 10px 10px 0px #00000038;
+    }
+
+  .bi.bi-info-circle-fill:hover + .tooltip-text {
+      display: inline-block;
+      color: black;
+      animation: fadeIn 2s;
+    }
+
+  /*--------------------------------------------------------------
+  # tooltip
+  --------------------------------------------------------------*/

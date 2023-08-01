@@ -1,0 +1,26 @@
+version: "3.7"
+services:
+  codestyle:
+    image: lorisleiva/laravel-docker
+    volumes:
+      - ./app:/app
+  selenium:
+    image: 'selenium/standalone-chrome'
+    volumes:
+        - '/dev/shm:/dev/shm'
+    networks:
+      - kool_local
+  mailhog:
+    image: "mailhog/mailhog:latest"
+    networks:
+      - kool_local
+
+volumes:
+  database: null
+  cache: null
+networks:
+  kool_local:
+    driver: bridge
+  kool_global:
+    external: true
+    name: ${KOOL_GLOBAL_NETWORK:-kool_global}
